@@ -11,7 +11,7 @@
         <div class="grid">
             <h2>R</h2>
         </div>
-        <div class="grid">
+        <div class="grid flex">
             <div class="sub-grid">
                 <span>J</span>
                 <span>A</span>
@@ -27,11 +27,11 @@
         <div class="grid">
             <p class="vertical-text">the journal for graphic design</p>
         </div>
-        <div class="grid">
+        <div class="grid flex">
             <h2 class="egrid">E</h2>
             <p>in this <br>issue</p>
         </div>
-        <div class="grid">
+        <div class="grid flex">
             <h2>Z</h2>
             <p class="z-sub-grid">graphic disclosure: <br>a tale of two typefaces</p>
             <p class="z-sub-grid">open and close: <br>title design for television</p>
@@ -40,11 +40,11 @@
         <div class="grid">
             <p class="vertical-text">the journal for graphic design</p>
         </div>
-        <div class="grid">
+        <div class="grid flex">
             <h2>N</h2>
             <h4 class="n-sub-grid">features</h4>
-            <p class="n-sub-grid">saul bass piet zwart alvin lustig lester beall lou dorfsman</p>        </div>
-        <div class="grid">
+        </div>
+        <div class="grid flex">
             <h2>8</h2>
         </div>
     </main>
@@ -53,24 +53,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root{
-    --font-size: 12px;
-    --font-size-small: 8px;
-    --font-size-large: 250px; 
-
     --font-weight-sm: 200;
-
-    --letter-spacing-lg: 1px;
-    --letter-spacing-xl: 4px;
-    --letter-spacing-2xl: 6px;
-
     --left-gap: -48%;
-    --bottom-padding: 20px;
 }
 
 @layer baselayout{
     html{
         font-family: "Archivo", serif;
-        font-size: var(--font-size);
+        font-size: 12px;
         text-transform: uppercase;
 
         height: 100vh;
@@ -80,7 +70,7 @@
         align-items: center;        
     }
     h2{
-        font-size: var(--font-size-large);
+        font-size: 250px;
         font-weight: 600;
     }
 }
@@ -88,7 +78,6 @@
 .wrapper{
     width: 400px;
     height: 600px;
-    margin: 0 auto;
     border: 1px solid;
 
     display: grid;
@@ -103,158 +92,158 @@
     position: relative;
 }
 
+.wrapper > *{
+    position: relative;
+}
+
 .wrapper::after{
-    position: absolute;
     content: 'el lissitxky paul rand josef m. brockmann shigeo fukuda armin hoffman odermatt + tissi wofgang weingart bradury thompsom';
-    right: 20px;
+    position: absolute;
+    right: 23px;
     bottom: 116.5px;
+    
     width: 95px;
     background: #fff;
     padding: 15px 30px 2px 5px;
+
     letter-spacing: 0.8px;
     font-size: 9px;
-    text-transform: none;
     font-weight: var(--font-weight-sm);
+    text-transform: none;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .grid{
     overflow: hidden;
-    padding-bottom: var(--bottom-padding);
-    &:first-child{
-        position: relative;
-        width: 100%;
-        h2{
-            position: absolute;
-            top: -38%;
-            left: var(--left-gap);
-            vertical-align: bottom;
-        }
-    }
-    &:nth-child(2){
-        display: flex;
-        justify-content: end;
-        align-items: end;
-        font-weight: bold;
-    } 
-    &:nth-child(3){
-        position: relative;
-        overflow: visible;
-        p{
-            position: absolute;
-            top: -10%;
-            right: 30%;
-        }
-    }
-    &:nth-child(4){
-        position: relative;
-        display: flex;
-        align-items: center;
-        h2{
-            margin-left: var(--left-gap);
-            font-weight: 700;
-        };
-        p{
-            position: absolute;
-            top: 0px;
-            right: 20px;
-            padding: 0 14px;
-            line-height: 1.5;
-            width: 100%;
-            font-weight: bold;
-            font-size: 11px;
-            background: #fff;
-            text-align: end;
-            letter-spacing: var(--letter-spacing-2xl);
-        }   
-    }
-    &:nth-child(5){
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        p{
-            position: absolute;
-            text-transform: none;
-            letter-spacing: 1.5px;
-            line-height: 1.7;
-            padding: 0 2px;
-            font-size: 9px;
-            background: #fff;
-            width: 100%;
-        }
-        p.z-sub-grid:nth-of-type(1) {
-            padding: 0 0 5px 0 ;
-            top: 0;
-            left: 0;
-            text-align: end;
-        }
-        p.z-sub-grid:nth-of-type(2) {
-            padding: 5px 0 0 0 ;
-            bottom: 10px;
-            left: 0;
-        }
-    }
-    &:nth-child(7){
-        position: relative;
-        overflow: visible;
-        p{
-            position: absolute;
-            top: 50%;
-            right: 35%;
-        }
-    }
-    &:nth-child(8){
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        h4, p{
-            position: absolute;
-            background: #fff;
-        }
-        h4{
-            top: 0;
-            left: 0;
-            padding: 0 15px 10px 3px;
-            font-weight: 800;
-            font-size: 10px;
-        }
-        p{
-            letter-spacing: var(--letter-spacing-lg);
-            font-size: 9px;
-            background: #fff;
-            text-transform: none;
-            top: 18px;
-            left: 0;
-            padding: 0 20px 2px 3px;
-            width: 65px;
-            font-weight: var(--font-weight-sm);
-        }
-    }
-    &:last-child{
-        position: relative;
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        padding-left: 20px;
-    }
+    padding-bottom: 20px;
 }
-/* 2nd child */
-.sub-grid{
+
+.grid > *{
+    background: #fff;
+}
+
+.grid:first-child{
+    width: 100%;
+}
+.grid:first-child h2{
+    position: absolute;
+    top: -38%;
+    left: var(--left-gap);
+    vertical-align: bottom;
+}
+
+.grid:nth-child(2){
+    justify-content: end;
+    align-items: end;
+    font-weight: bold;
+} 
+.grid:nth-child(2) >.sub-grid{
     width: 50%;
     height: 50%;
     display: grid;
-    text-align: end;
-    column-gap: 5px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 5px;
+    text-align: end;
 }
-/* vertical text */
+
+.grid:nth-child(3){
+    overflow: visible;
+}
+.grid:nth-child(3) p{
+    position: absolute;
+    top: -10%;
+    right: 30%;
+}
+
+.grid:nth-child(4){
+    justify-content: start;  
+}
+.grid:nth-child(4) h2{
+    margin-left: var(--left-gap);
+    font-weight: 700;
+}
+.grid:nth-child(4) p{
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    padding: 0 14px;
+    line-height: 1.5;
+    width: 100%;
+    font-weight: bold;
+    text-align: end;
+    letter-spacing: 6px;
+}
+
+.grid:nth-child(5) p{
+    position: absolute;
+    text-transform: none;
+    letter-spacing: 1.5px;
+    line-height: 1.7;
+    padding: 0 2px;
+    font-size: 9px;
+    width: 100%;
+}
+.grid:nth-child(5) p.z-sub-grid:nth-of-type(1) {
+    padding: 0 0 5px 0 ;
+    top: 0;
+    left: 0;
+    text-align: end;
+}
+.grid:nth-child(5) p.z-sub-grid:nth-of-type(2) {
+    padding: 5px 0 0 0 ;
+    bottom: 10px;
+    left: 0;
+}
+
+.grid:nth-child(7){
+    overflow: visible;
+}
+.grid:nth-child(7) p{
+    position: absolute;
+    top: 50%;
+    right: 35%;
+}
+
+.grid:nth-child(8) h4{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 15px 10px 3px;
+    font-weight: 800;
+    font-size: 10px;
+}
+.grid:nth-child(8)::after{
+    content: 'saul bass piet zwart alvin lustig lester beall lou dorfsman';
+    position: absolute;
+    top: 18px;
+    left: 0;
+    
+    background: #fff;
+    padding: 0 20px 2px 3px;
+    width: 65px;
+
+    letter-spacing: 1px;
+    font-size: 9px;
+    font-weight: var(--font-weight-sm);
+    text-transform: none;
+}
+
+.grid:last-child{
+    justify-content: start;
+    padding-left: 20px;
+}
+
 .vertical-text{
     color: #999;
     writing-mode: vertical-lr;
     text-wrap: nowrap;
-    font-size: var(--font-size-small);
-    letter-spacing: var(--letter-spacing-xl);  
+    font-size: 8px;
+    letter-spacing: 4px;  
 }
 </style>
 </html>
