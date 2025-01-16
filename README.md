@@ -1,5 +1,6 @@
 # 雜誌切版專案
 很喜歡這張設計稿 Original design from: https://pin.it/CNwo9c9pL
+<br>
 所以用單純 HTML + CSS 來做切版練習。
 
 ## 主要練習
